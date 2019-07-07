@@ -10,17 +10,23 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="assets/javascript/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 </head>
 
 <body>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img id="septa" src="assets/images/septa.png" alt="septa logo">
+        <!-- <a class="navbar-brand" href="#"> -->
+        <img id="septa" src="assets/images/septa.png" alt="septa logo">
+        <div id="navDiv">
             <h1 id="navH1">SEPTA - Philadelphia's solution for mass transit</h1>
-        </a>
+        </div>
+        <!-- </a> -->
     </nav>
     <img id="train" src="assets/images/train.jpg" alt="train">
+
     <div class="container">
         <div id="tableHead1" class="row">
             <div class="col-lg-2"></div>
@@ -33,23 +39,18 @@
             <div class="col-lg-1"></div>
             <div id="name" class="col-lg-2">
                 <h6>Train Name</h6>
-                <div class="name">Enterprise 1701-D</div>
             </div>
             <div id="dest" class="col-lg-2">
                 <h6>Destination</h6>
-                <div class="dest">Neutral Zone</div>
             </div>
             <div id="freq" class="col-lg-2">
                 <h6>Frequency in Minutes</h6>
-                <div class="freq">20 min</div>
             </div>
             <div id="next" class="col-lg-2">
                 <h6>Next Arrival</h6>
-                <div class="next">8:00pm</div>
             </div>
             <div id="min" class="col-lg-2">
                 <h6>Minutes Away</h6>
-                <div class="min">5 min</div>
             </div>
             <div class="col-lg-1"></div>
         </div>
@@ -58,7 +59,22 @@
                 <button id="addTrain" type="button" class="btn btn-danger">Add a Train</button>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="newForm">
+                    <input id="inputName" type="text" placeholder="Train Name">
+                    <input id="inputDest" type="text" placeholder="Destination">
+                    <input id="inputFreq" type="text" placeholder="Frequency in Minutes">
+                    <input id="inputNext" type="text" placeholder="Next Arrival">
+                    <input id="inputMin" type="text" placeholder="Minutes Away">
+                    <br>
+                    <button id="inputBtn" type="button" class="btn btn-warning">Add this train</button>
+                    <button id="inputCancelBtn" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
